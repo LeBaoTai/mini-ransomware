@@ -1,9 +1,14 @@
 import requests
 import json
+import uuid
 
 class ApiService:
   def __init__(self) -> None:
     pass
+
+  def get_mac():
+    mac_add = uuid.getnode()
+    print(mac_add)
 
   def get_key(mac_add):
     headers = {"Accept": "application/json"}
