@@ -1,4 +1,5 @@
 import tkinter as tk
+from PIL import ImageTk, Image
 from services.api_services import ApiService
 
 RED_BG = '#A0153E'
@@ -19,7 +20,7 @@ class HomeScreen(tk.Tk):
   def __init__(self):
     super().__init__()
     self.title("Wanna Laugh")
-    self.geometry('800x500')
+    #self.geometry('800x500')
     self.resizable(False, False)
 
     main_frame = MainFrame(master=self)
@@ -38,10 +39,17 @@ class HomeScreen(tk.Tk):
     )
     label.pack()
 
+    # img label
+    image_original = Image.open('assets/banner.png').resize((700, 500))
+    self.image_tk = ImageTk.PhotoImage(image_original)
+
+    label_image = tk.Label(master=main_frame, image=self.image_tk, bg=RED_BG)
+    label_image.pack(expand=1, fill='both')
+
     # nut chuyen tien
     pay_btn = tk.Button(
       master=main_frame, 
-      text='Pay Now', 
+      text='PAY NOW', 
       width=10, 
       height=5,
       borderwidth=1,
