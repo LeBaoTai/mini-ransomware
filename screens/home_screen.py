@@ -5,9 +5,20 @@ import encrypt.encrypt_file as enc
 import decrypt.decrypt_file as dec
 import services.get_files as get_files
 import services.get_dirs as get_dirs
+import os
+import sys
 
 RED_BG = '#A0153E'
 WHITE = '#EEEDED'
+
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS2
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 def pay_now():
   # get key from data
@@ -16,7 +27,7 @@ def pay_now():
 
   # child screen
   noti_screen = tk.Toplevel()
-  ico = Image.open('assets/hacker.ico')
+  ico = Image.open(resource_path('assets\\hacker.ico'))
   ico_photo = ImageTk.PhotoImage(ico)
   noti_screen.iconphoto(False, ico_photo)
   noti_screen.resizable(False, False)
@@ -66,13 +77,13 @@ label.pack()
 
 
 # icon window
-ico = Image.open('assets/hacker.ico')
+ico = Image.open(resource_path('assets\\hacker.ico'))
 ico_photo = ImageTk.PhotoImage(ico)
 main_window.iconphoto(False, ico_photo)
 
 
 # img label
-image_original = Image.open('assets/banner.png').resize((700, 500))
+image_original = Image.open(resource_path('assets\\banner.png')).resize((700, 500))
 main_window.image_tk = ImageTk.PhotoImage(image_original)
 
 label_image = tk.Label(master=main_frame, image=main_window.image_tk, bg=RED_BG)
