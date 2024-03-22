@@ -45,7 +45,7 @@ def pay_now():
 
   all_enc_files = get_files.get_enc_files()
   if all_enc_files.__len__:
-    dirs = get_dirs.get_home_dirs()
+    dirs = get_dirs.get_all_dirs()
     all_enc_files = get_files.re_scan_enc_file(dirs[0])
 
   # decrypt file
