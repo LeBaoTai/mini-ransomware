@@ -7,7 +7,7 @@ This ransomware is written in python and only used for learning purposes (how to
 | Tên                | Mã số sinh viên |
 |--------------------|-----------------|
 | Trương Hồ An       | 3120410024      |
-| Vương Trường Chung |                 |
+| Vương Trường Chung | 3120410068      |
 | Trịnh Cao Lộc      | 3120410298      |
-| Trần Ngọc Sơn      |                 |
+| Trần Ngọc Sơn      | 3120410454      |
 | Lê Bảo Tài         | 3120410457      |
