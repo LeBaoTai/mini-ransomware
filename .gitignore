@@ -3,3 +3,4 @@ build/
 dist/
 *.spec
 output/
+DONT_DELETE.txt
